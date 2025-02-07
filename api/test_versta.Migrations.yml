@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: test_versta.Migrations
+  commentId: N:test_versta.Migrations
+  id: test_versta.Migrations
+  children:
+  - test_versta.Migrations.InitialMigrate
+  langs:
+  - csharp
+  - vb
+  name: test_versta.Migrations
+  nameWithType: test_versta.Migrations
+  fullName: test_versta.Migrations
+  type: Namespace
+  assemblies:
+  - test_versta
+references:
+- uid: test_versta.Migrations.InitialMigrate
+  commentId: T:test_versta.Migrations.InitialMigrate
+  href: test_versta.Migrations.InitialMigrate.html
+  name: InitialMigrate
+  nameWithType: InitialMigrate
+  fullName: test_versta.Migrations.InitialMigrate

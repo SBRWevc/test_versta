@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: test_versta.Models
+  commentId: N:test_versta.Models
+  id: test_versta.Models
+  children:
+  - test_versta.Models.ApplicationUser
+  - test_versta.Models.Order
+  langs:
+  - csharp
+  - vb
+  name: test_versta.Models
+  nameWithType: test_versta.Models
+  fullName: test_versta.Models
+  type: Namespace
+  assemblies:
+  - test_versta
+references:
+- uid: test_versta.Models.ApplicationUser
+  commentId: T:test_versta.Models.ApplicationUser
+  parent: test_versta.Models
+  href: test_versta.Models.ApplicationUser.html
+  name: ApplicationUser
+  nameWithType: ApplicationUser
+  fullName: test_versta.Models.ApplicationUser
+- uid: test_versta.Models.Order
+  commentId: T:test_versta.Models.Order
+  parent: test_versta.Models
+  href: test_versta.Models.Order.html
+  name: Order
+  nameWithType: Order
+  fullName: test_versta.Models.Order
+- uid: test_versta.Models
+  commentId: N:test_versta.Models
+  href: test_versta.html
+  name: test_versta.Models
+  nameWithType: test_versta.Models
+  fullName: test_versta.Models
+  spec.csharp:
+  - uid: test_versta
+    name: test_versta
+    href: test_versta.html
+  - name: .
+  - uid: test_versta.Models
+    name: Models
+    href: test_versta.Models.html
+  spec.vb:
+  - uid: test_versta
+    name: test_versta
+    href: test_versta.html
+  - name: .
+  - uid: test_versta.Models
+    name: Models
+    href: test_versta.Models.html

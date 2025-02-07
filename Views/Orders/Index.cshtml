@@ -1,0 +1,36 @@
+﻿@model IEnumerable<test_versta.Models.Order>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Список заказов";
+    Layout = "_Layout";
+}
+
+<div class="container my-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>@ViewData["Title"]</h2>
+        <a asp-action="Create" class="btn btn-success">Новый заказ</a>
+    </div>
+
+    <div class="row">
+        @foreach (var order in Model)
+        {
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card animate__animated animate__fadeInUp">
+                    <div class="card-header">
+                        Заказ № @order.OrderId
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>Отправитель:</strong> @order.SenderCity, @order.SenderAddress<br />
+                            <strong>Получатель:</strong> @order.RecipientCity, @order.RecipientAddress<br />
+                            <strong>Вес груза:</strong> @order.Weight кг<br />
+                            <strong>Дата забора:</strong> @order.PickupDate.ToString("yyyy-MM-dd")
+                        </p>
+                        <a asp-action="Details" asp-route-id="@order.OrderId" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

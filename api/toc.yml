@@ -1,0 +1,54 @@
+### YamlMime:TableOfContent
+items:
+- uid: test_versta.Controllers
+  name: test_versta.Controllers
+  type: Namespace
+  items:
+  - uid: test_versta.Controllers.AccountController
+    name: AccountController
+    type: Class
+  - uid: test_versta.Controllers.OrdersController
+    name: OrdersController
+    type: Class
+- uid: test_versta.Data
+  name: test_versta.Data
+  type: Namespace
+  items:
+  - uid: test_versta.Data.ApplicationDbContext
+    name: ApplicationDbContext
+    type: Class
+- uid: test_versta.Migrations
+  name: test_versta.Migrations
+  type: Namespace
+  items:
+  - uid: test_versta.Migrations.InitialMigrate
+    name: InitialMigrate
+    type: Class
+- uid: test_versta.Models
+  name: test_versta.Models
+  type: Namespace
+  items:
+  - uid: test_versta.Models.ApplicationUser
+    name: ApplicationUser
+    type: Class
+  - uid: test_versta.Models.Order
+    name: Order
+    type: Class
+- uid: test_versta.Services
+  name: test_versta.Services
+  type: Namespace
+  items:
+  - uid: test_versta.Services.InitialData
+    name: InitialData
+    type: Class
+- uid: test_versta.ViewModels
+  name: test_versta.ViewModels
+  type: Namespace
+  items:
+  - uid: test_versta.ViewModels.LoginViewModel
+    name: LoginViewModel
+    type: Class
+  - uid: test_versta.ViewModels.RegisterViewModel
+    name: RegisterViewModel
+    type: Class
+memberLayout: SamePage

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: test_versta.Services
+  commentId: N:test_versta.Services
+  id: test_versta.Services
+  children:
+  - test_versta.Services.InitialData
+  langs:
+  - csharp
+  - vb
+  name: test_versta.Services
+  nameWithType: test_versta.Services
+  fullName: test_versta.Services
+  type: Namespace
+  assemblies:
+  - test_versta
+references:
+- uid: test_versta.Services.InitialData
+  commentId: T:test_versta.Services.InitialData
+  href: test_versta.Services.InitialData.html
+  name: InitialData
+  nameWithType: InitialData
+  fullName: test_versta.Services.InitialData

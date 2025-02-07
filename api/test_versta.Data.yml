@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: test_versta.Data
+  commentId: N:test_versta.Data
+  id: test_versta.Data
+  children:
+  - test_versta.Data.ApplicationDbContext
+  langs:
+  - csharp
+  - vb
+  name: test_versta.Data
+  nameWithType: test_versta.Data
+  fullName: test_versta.Data
+  type: Namespace
+  assemblies:
+  - test_versta
+references:
+- uid: test_versta.Data.ApplicationDbContext
+  commentId: T:test_versta.Data.ApplicationDbContext
+  parent: test_versta.Data
+  href: test_versta.Data.ApplicationDbContext.html
+  name: ApplicationDbContext
+  nameWithType: ApplicationDbContext
+  fullName: test_versta.Data.ApplicationDbContext
+- uid: test_versta.Data
+  commentId: N:test_versta.Data
+  href: test_versta.html
+  name: test_versta.Data
+  nameWithType: test_versta.Data
+  fullName: test_versta.Data
+  spec.csharp:
+  - uid: test_versta
+    name: test_versta
+    href: test_versta.html
+  - name: .
+  - uid: test_versta.Data
+    name: Data
+    href: test_versta.Data.html
+  spec.vb:
+  - uid: test_versta
+    name: test_versta
+    href: test_versta.html
+  - name: .
+  - uid: test_versta.Data
+    name: Data
+    href: test_versta.Data.html

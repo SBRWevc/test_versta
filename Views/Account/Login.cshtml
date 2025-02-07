@@ -1,0 +1,43 @@
+﻿@model test_versta.ViewModels.LoginViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Вход";
+    Layout = "_Layout";
+}
+
+<div class="container d-flex flex-grow-1 justify-content-center align-items-center">
+    <div class="card shadow-sm animate__animated animate__fadeIn" style="min-width: 350px;">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">Вход</h2>
+            <form asp-action="Login" method="post">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="Email" placeholder="name@example.com" asp-for="Email">
+                    <label for="Email">Адрес электронной почты</label>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="Password" placeholder="Пароль" asp-for="Password">
+                    <label for="Password">Пароль</label>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="form-check">
+                        <input asp-for="RememberMe" class="form-check-input"/>
+                        <label asp-for="RememberMe" class="form-check-label">Запомнить меня</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                </div>
+                <input type="hidden" asp-for="ReturnUrl"/>
+            </form>
+        </div>
+        <div class="card-footer text-center">
+            <a asp-action="Register" asp-controller="Account">Еще не зарегистрированы?</a>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

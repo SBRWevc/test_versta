@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: test_versta.ViewModels
+  commentId: N:test_versta.ViewModels
+  id: test_versta.ViewModels
+  children:
+  - test_versta.ViewModels.LoginViewModel
+  - test_versta.ViewModels.RegisterViewModel
+  langs:
+  - csharp
+  - vb
+  name: test_versta.ViewModels
+  nameWithType: test_versta.ViewModels
+  fullName: test_versta.ViewModels
+  type: Namespace
+  assemblies:
+  - test_versta
+references:
+- uid: test_versta.ViewModels.LoginViewModel
+  commentId: T:test_versta.ViewModels.LoginViewModel
+  parent: test_versta.ViewModels
+  href: test_versta.ViewModels.LoginViewModel.html
+  name: LoginViewModel
+  nameWithType: LoginViewModel
+  fullName: test_versta.ViewModels.LoginViewModel
+- uid: test_versta.ViewModels.RegisterViewModel
+  commentId: T:test_versta.ViewModels.RegisterViewModel
+  parent: test_versta.ViewModels
+  href: test_versta.ViewModels.RegisterViewModel.html
+  name: RegisterViewModel
+  nameWithType: RegisterViewModel
+  fullName: test_versta.ViewModels.RegisterViewModel
+- uid: test_versta.ViewModels
+  commentId: N:test_versta.ViewModels
+  href: test_versta.html
+  name: test_versta.ViewModels
+  nameWithType: test_versta.ViewModels
+  fullName: test_versta.ViewModels
+  spec.csharp:
+  - uid: test_versta
+    name: test_versta
+    href: test_versta.html
+  - name: .
+  - uid: test_versta.ViewModels
+    name: ViewModels
+    href: test_versta.ViewModels.html
+  spec.vb:
+  - uid: test_versta
+    name: test_versta
+    href: test_versta.html
+  - name: .
+  - uid: test_versta.ViewModels
+    name: ViewModels
+    href: test_versta.ViewModels.html

@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: test_versta.Controllers
+  commentId: N:test_versta.Controllers
+  id: test_versta.Controllers
+  children:
+  - test_versta.Controllers.AccountController
+  - test_versta.Controllers.OrdersController
+  langs:
+  - csharp
+  - vb
+  name: test_versta.Controllers
+  nameWithType: test_versta.Controllers
+  fullName: test_versta.Controllers
+  type: Namespace
+  assemblies:
+  - test_versta
+references:
+- uid: test_versta.Controllers.AccountController
+  commentId: T:test_versta.Controllers.AccountController
+  href: test_versta.Controllers.AccountController.html
+  name: AccountController
+  nameWithType: AccountController
+  fullName: test_versta.Controllers.AccountController
+- uid: test_versta.Controllers.OrdersController
+  commentId: T:test_versta.Controllers.OrdersController
+  href: test_versta.Controllers.OrdersController.html
+  name: OrdersController
+  nameWithType: OrdersController
+  fullName: test_versta.Controllers.OrdersController
