@@ -20,6 +20,7 @@ namespace test_versta.Models
         /// </summary>
         [Required(ErrorMessage = "Укажите город отправителя")]
         [Display(Name = "Город отправителя")]
+        [StringLength(100, MinimumLength = 2, ErrorMessage = "Город отправителя должен содержать от 2 до 100 символов")]
         public string SenderCity { get; set; }
 
         /// <summary>
@@ -27,6 +28,7 @@ namespace test_versta.Models
         /// </summary>
         [Required(ErrorMessage = "Укажите адрес отправителя")]
         [Display(Name = "Адрес отправителя")]
+        [StringLength(200, MinimumLength = 5, ErrorMessage = "Адрес отправителя должен содержать от 5 до 200 символов")]
         public string SenderAddress { get; set; }
 
         /// <summary>
@@ -34,6 +36,7 @@ namespace test_versta.Models
         /// </summary>
         [Required(ErrorMessage = "Укажите город получателя")]
         [Display(Name = "Город получателя")]
+        [StringLength(100, MinimumLength = 2, ErrorMessage = "Город получателя должен содержать от 2 до 100 символов")]
         public string RecipientCity { get; set; }
 
         /// <summary>
@@ -41,6 +44,7 @@ namespace test_versta.Models
         /// </summary>
         [Required(ErrorMessage = "Укажите адрес получателя")]
         [Display(Name = "Адрес получателя")]
+        [StringLength(200, MinimumLength = 5, ErrorMessage = "Адрес получателя должен содержать от 5 до 200 символов")]
         public string RecipientAddress { get; set; }
 
         /// <summary>
