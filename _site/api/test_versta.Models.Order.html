@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Order | test_versta </title>
+      <title>Class Order </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Order | test_versta ">
+      <meta name="title" content="Class Order ">
       
       <meta name="description" content="Представляет заказ на доставку.">
       <link rel="icon" href="../favicon.ico">
@@ -89,7 +89,7 @@
 
 
   <h1 id="test_versta_Models_Order" data-uid="test_versta.Models.Order" class="text-break">
-Class Order  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class Order  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -157,7 +157,7 @@ Class Order  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="test_versta_Models_Order_Client" data-uid="test_versta.Models.Order.Client">
   Client
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Клиент, оформивший заказ.</p>
@@ -189,7 +189,7 @@ Class Order  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="test_versta_Models_Order_ClientId" data-uid="test_versta.Models.Order.ClientId">
   ClientId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L70"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Идентификатор клиента, оформившего заказ.</p>
@@ -221,7 +221,7 @@ Class Order  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="test_versta_Models_Order_OrderId" data-uid="test_versta.Models.Order.OrderId">
   OrderId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Уникальный идентификатор заказа.</p>
@@ -254,7 +254,7 @@ public int OrderId { get; set; }</code></pre>
 
   <h3 id="test_versta_Models_Order_PickupDate" data-uid="test_versta.Models.Order.PickupDate">
   PickupDate
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Дата забора груза.</p>
@@ -289,7 +289,7 @@ public DateTime PickupDate { get; set; }</code></pre>
 
   <h3 id="test_versta_Models_Order_RecipientAddress" data-uid="test_versta.Models.Order.RecipientAddress">
   RecipientAddress
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Адрес получателя.</p>
@@ -299,6 +299,7 @@ public DateTime PickupDate { get; set; }</code></pre>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;Укажите адрес получателя&quot;)]
 [Display(Name = &quot;Адрес получателя&quot;)]
+[StringLength(200, MinimumLength = 5, ErrorMessage = &quot;Адрес получателя должен содержать от 5 до 200 символов&quot;)]
 public string RecipientAddress { get; set; }</code></pre>
   </div>
 
@@ -323,7 +324,7 @@ public string RecipientAddress { get; set; }</code></pre>
 
   <h3 id="test_versta_Models_Order_RecipientCity" data-uid="test_versta.Models.Order.RecipientCity">
   RecipientCity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Город получателя.</p>
@@ -333,6 +334,7 @@ public string RecipientAddress { get; set; }</code></pre>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;Укажите город получателя&quot;)]
 [Display(Name = &quot;Город получателя&quot;)]
+[StringLength(100, MinimumLength = 2, ErrorMessage = &quot;Город получателя должен содержать от 2 до 100 символов&quot;)]
 public string RecipientCity { get; set; }</code></pre>
   </div>
 
@@ -357,7 +359,7 @@ public string RecipientCity { get; set; }</code></pre>
 
   <h3 id="test_versta_Models_Order_SenderAddress" data-uid="test_versta.Models.Order.SenderAddress">
   SenderAddress
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Адрес отправителя.</p>
@@ -367,6 +369,7 @@ public string RecipientCity { get; set; }</code></pre>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;Укажите адрес отправителя&quot;)]
 [Display(Name = &quot;Адрес отправителя&quot;)]
+[StringLength(200, MinimumLength = 5, ErrorMessage = &quot;Адрес отправителя должен содержать от 5 до 200 символов&quot;)]
 public string SenderAddress { get; set; }</code></pre>
   </div>
 
@@ -391,7 +394,7 @@ public string SenderAddress { get; set; }</code></pre>
 
   <h3 id="test_versta_Models_Order_SenderCity" data-uid="test_versta.Models.Order.SenderCity">
   SenderCity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Город отправителя.</p>
@@ -401,6 +404,7 @@ public string SenderAddress { get; set; }</code></pre>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;Укажите город отправителя&quot;)]
 [Display(Name = &quot;Город отправителя&quot;)]
+[StringLength(100, MinimumLength = 2, ErrorMessage = &quot;Город отправителя должен содержать от 2 до 100 символов&quot;)]
 public string SenderCity { get; set; }</code></pre>
   </div>
 
@@ -425,7 +429,7 @@ public string SenderCity { get; set; }</code></pre>
 
   <h3 id="test_versta_Models_Order_Weight" data-uid="test_versta.Models.Order.Weight">
   Weight
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Вес груза (в кг).</p>
@@ -435,6 +439,7 @@ public string SenderCity { get; set; }</code></pre>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;Укажите вес груза&quot;)]
 [Display(Name = &quot;Вес груза&quot;)]
+[Range(0.1, 1000, ErrorMessage = &quot;Вес груза должен быть в пределах от 0.1 до 1000 кг&quot;)]
 public decimal Weight { get; set; }</code></pre>
   </div>
 
@@ -459,7 +464,7 @@ public decimal Weight { get; set; }</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/SBRWevc/test_versta/blob/master/Models/Order.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

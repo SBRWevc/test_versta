@@ -28,7 +28,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: Order
     path: Models/Order.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - test_versta
   namespace: test_versta.Models
@@ -65,7 +65,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: OrderId
     path: Models/Order.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - test_versta
   namespace: test_versta.Models
@@ -106,7 +106,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: SenderCity
     path: Models/Order.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - test_versta
   namespace: test_versta.Models
@@ -118,6 +118,8 @@ items:
 
       [Display(Name = "Город отправителя")]
 
+      [StringLength(100, MinimumLength = 2, ErrorMessage = "Город отправителя должен содержать от 2 до 100 символов")]
+
       public string SenderCity { get; set; }
     parameters: []
     return:
@@ -126,6 +128,8 @@ items:
       <Required(ErrorMessage:="Укажите город отправителя")>
 
       <Display(Name:="Город отправителя")>
+
+      <StringLength(100, MinimumLength:=2, ErrorMessage:="Город отправителя должен содержать от 2 до 100 символов")>
 
       Public Property SenderCity As String
   overload: test_versta.Models.Order.SenderCity*
@@ -144,6 +148,18 @@ items:
     - name: Name
       type: System.String
       value: Город отправителя
+  - type: System.ComponentModel.DataAnnotations.StringLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 100
+    namedArguments:
+    - name: MinimumLength
+      type: System.Int32
+      value: 2
+    - name: ErrorMessage
+      type: System.String
+      value: Город отправителя должен содержать от 2 до 100 символов
 - uid: test_versta.Models.Order.SenderAddress
   commentId: P:test_versta.Models.Order.SenderAddress
   id: SenderAddress
@@ -162,7 +178,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: SenderAddress
     path: Models/Order.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - test_versta
   namespace: test_versta.Models
@@ -174,6 +190,8 @@ items:
 
       [Display(Name = "Адрес отправителя")]
 
+      [StringLength(200, MinimumLength = 5, ErrorMessage = "Адрес отправителя должен содержать от 5 до 200 символов")]
+
       public string SenderAddress { get; set; }
     parameters: []
     return:
@@ -182,6 +200,8 @@ items:
       <Required(ErrorMessage:="Укажите адрес отправителя")>
 
       <Display(Name:="Адрес отправителя")>
+
+      <StringLength(200, MinimumLength:=5, ErrorMessage:="Адрес отправителя должен содержать от 5 до 200 символов")>
 
       Public Property SenderAddress As String
   overload: test_versta.Models.Order.SenderAddress*
@@ -200,6 +220,18 @@ items:
     - name: Name
       type: System.String
       value: Адрес отправителя
+  - type: System.ComponentModel.DataAnnotations.StringLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 200
+    namedArguments:
+    - name: MinimumLength
+      type: System.Int32
+      value: 5
+    - name: ErrorMessage
+      type: System.String
+      value: Адрес отправителя должен содержать от 5 до 200 символов
 - uid: test_versta.Models.Order.RecipientCity
   commentId: P:test_versta.Models.Order.RecipientCity
   id: RecipientCity
@@ -218,7 +250,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: RecipientCity
     path: Models/Order.cs
-    startLine: 33
+    startLine: 36
   assemblies:
   - test_versta
   namespace: test_versta.Models
@@ -230,6 +262,8 @@ items:
 
       [Display(Name = "Город получателя")]
 
+      [StringLength(100, MinimumLength = 2, ErrorMessage = "Город получателя должен содержать от 2 до 100 символов")]
+
       public string RecipientCity { get; set; }
     parameters: []
     return:
@@ -238,6 +272,8 @@ items:
       <Required(ErrorMessage:="Укажите город получателя")>
 
       <Display(Name:="Город получателя")>
+
+      <StringLength(100, MinimumLength:=2, ErrorMessage:="Город получателя должен содержать от 2 до 100 символов")>
 
       Public Property RecipientCity As String
   overload: test_versta.Models.Order.RecipientCity*
@@ -256,6 +292,18 @@ items:
     - name: Name
       type: System.String
       value: Город получателя
+  - type: System.ComponentModel.DataAnnotations.StringLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 100
+    namedArguments:
+    - name: MinimumLength
+      type: System.Int32
+      value: 2
+    - name: ErrorMessage
+      type: System.String
+      value: Город получателя должен содержать от 2 до 100 символов
 - uid: test_versta.Models.Order.RecipientAddress
   commentId: P:test_versta.Models.Order.RecipientAddress
   id: RecipientAddress
@@ -274,7 +322,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: RecipientAddress
     path: Models/Order.cs
-    startLine: 40
+    startLine: 44
   assemblies:
   - test_versta
   namespace: test_versta.Models
@@ -286,6 +334,8 @@ items:
 
       [Display(Name = "Адрес получателя")]
 
+      [StringLength(200, MinimumLength = 5, ErrorMessage = "Адрес получателя должен содержать от 5 до 200 символов")]
+
       public string RecipientAddress { get; set; }
     parameters: []
     return:
@@ -294,6 +344,8 @@ items:
       <Required(ErrorMessage:="Укажите адрес получателя")>
 
       <Display(Name:="Адрес получателя")>
+
+      <StringLength(200, MinimumLength:=5, ErrorMessage:="Адрес получателя должен содержать от 5 до 200 символов")>
 
       Public Property RecipientAddress As String
   overload: test_versta.Models.Order.RecipientAddress*
@@ -312,6 +364,18 @@ items:
     - name: Name
       type: System.String
       value: Адрес получателя
+  - type: System.ComponentModel.DataAnnotations.StringLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 200
+    namedArguments:
+    - name: MinimumLength
+      type: System.Int32
+      value: 5
+    - name: ErrorMessage
+      type: System.String
+      value: Адрес получателя должен содержать от 5 до 200 символов
 - uid: test_versta.Models.Order.Weight
   commentId: P:test_versta.Models.Order.Weight
   id: Weight
@@ -330,7 +394,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: Weight
     path: Models/Order.cs
-    startLine: 47
+    startLine: 52
   assemblies:
   - test_versta
   namespace: test_versta.Models
@@ -342,6 +406,8 @@ items:
 
       [Display(Name = "Вес груза")]
 
+      [Range(0.1, 1000, ErrorMessage = "Вес груза должен быть в пределах от 0.1 до 1000 кг")]
+
       public decimal Weight { get; set; }
     parameters: []
     return:
@@ -350,6 +416,8 @@ items:
       <Required(ErrorMessage:="Укажите вес груза")>
 
       <Display(Name:="Вес груза")>
+
+      <Range(0.1, 1000, ErrorMessage:="Вес груза должен быть в пределах от 0.1 до 1000 кг")>
 
       Public Property Weight As Decimal
   overload: test_versta.Models.Order.Weight*
@@ -368,6 +436,17 @@ items:
     - name: Name
       type: System.String
       value: Вес груза
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Double,System.Double)
+    arguments:
+    - type: System.Double
+      value: 0.1
+    - type: System.Double
+      value: 1000
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Вес груза должен быть в пределах от 0.1 до 1000 кг
 - uid: test_versta.Models.Order.PickupDate
   commentId: P:test_versta.Models.Order.PickupDate
   id: PickupDate
@@ -386,7 +465,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: PickupDate
     path: Models/Order.cs
-    startLine: 54
+    startLine: 60
   assemblies:
   - test_versta
   namespace: test_versta.Models
@@ -451,7 +530,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: ClientId
     path: Models/Order.cs
-    startLine: 62
+    startLine: 69
   assemblies:
   - test_versta
   namespace: test_versta.Models
@@ -482,7 +561,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: Client
     path: Models/Order.cs
-    startLine: 67
+    startLine: 74
   assemblies:
   - test_versta
   namespace: test_versta.Models

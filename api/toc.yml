@@ -17,12 +17,12 @@ items:
   - uid: test_versta.Data.ApplicationDbContext
     name: ApplicationDbContext
     type: Class
-- uid: test_versta.Migrations
-  name: test_versta.Migrations
+- uid: test_versta.Hubs
+  name: test_versta.Hubs
   type: Namespace
   items:
-  - uid: test_versta.Migrations.InitialMigrate
-    name: InitialMigrate
+  - uid: test_versta.Hubs.OrdersHub
+    name: OrdersHub
     type: Class
 - uid: test_versta.Models
   name: test_versta.Models
@@ -38,6 +38,9 @@ items:
   name: test_versta.Services
   type: Namespace
   items:
+  - uid: test_versta.Services.FutureOrTodayAttribute
+    name: FutureOrTodayAttribute
+    type: Class
   - uid: test_versta.Services.InitialData
     name: InitialData
     type: Class

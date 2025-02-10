@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class OrdersController | test_versta </title>
+      <title>Class OrdersController </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class OrdersController | test_versta ">
+      <meta name="title" content="Class OrdersController ">
       
       <meta name="description" content="Контроллер для управления заказами. Позволяет клиентам просматривать свои заказы, а администраторам — все заказы. Также поддерживает создание заказов без авторизации.">
       <link rel="icon" href="../favicon.ico">
@@ -89,7 +89,7 @@
 
 
   <h1 id="test_versta_Controllers_OrdersController" data-uid="test_versta.Controllers.OrdersController" class="text-break">
-Class OrdersController  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L15"><i class="bi bi-code-slash"></i></a>
+Class OrdersController  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -759,9 +759,9 @@ Class OrdersController  <a class="header-action link-secondary" title="View sour
 
   <a id="test_versta_Controllers_OrdersController__ctor_" data-uid="test_versta.Controllers.OrdersController.#ctor*"></a>
 
-  <h3 id="test_versta_Controllers_OrdersController__ctor_test_versta_Data_ApplicationDbContext_" data-uid="test_versta.Controllers.OrdersController.#ctor(test_versta.Data.ApplicationDbContext)">
-  OrdersController(ApplicationDbContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <h3 id="test_versta_Controllers_OrdersController__ctor_test_versta_Data_ApplicationDbContext_Microsoft_AspNetCore_SignalR_IHubContext_test_versta_Hubs_OrdersHub__" data-uid="test_versta.Controllers.OrdersController.#ctor(test_versta.Data.ApplicationDbContext,Microsoft.AspNetCore.SignalR.IHubContext{test_versta.Hubs.OrdersHub})">
+  OrdersController(ApplicationDbContext, IHubContext&lt;OrdersHub&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Контроллер для управления заказами.
@@ -771,12 +771,14 @@ Class OrdersController  <a class="header-action link-secondary" title="View sour
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OrdersController(ApplicationDbContext context)</code></pre>
+    <pre><code class="lang-csharp hljs">public OrdersController(ApplicationDbContext context, IHubContext&lt;OrdersHub&gt; ordersHub)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>context</code> <a class="xref" href="test_versta.Data.ApplicationDbContext.html">ApplicationDbContext</a></dt>
+    <dd></dd>
+    <dt><code>ordersHub</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.ihubcontext-1">IHubContext</a>&lt;<a class="xref" href="test_versta.Hubs.OrdersHub.html">OrdersHub</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -799,7 +801,7 @@ Class OrdersController  <a class="header-action link-secondary" title="View sour
 
   <h3 id="test_versta_Controllers_OrdersController_Create" data-uid="test_versta.Controllers.OrdersController.Create">
   Create()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L76"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Отображает форму создания нового заказа.
@@ -834,7 +836,7 @@ public IActionResult Create()</code></pre>
 
   <h3 id="test_versta_Controllers_OrdersController_Create_test_versta_Models_Order_" data-uid="test_versta.Controllers.OrdersController.Create(test_versta.Models.Order)">
   Create(Order)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L89"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Создаёт новый заказ на основе введённых пользователем данных.
@@ -878,7 +880,7 @@ public Task&lt;IActionResult&gt; Create(Order order)</code></pre>
 
   <h3 id="test_versta_Controllers_OrdersController_Details_System_Nullable_System_Int32__" data-uid="test_versta.Controllers.OrdersController.Details(System.Nullable{System.Int32})">
   Details(int?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Просмотр деталей конкретного заказа.
@@ -920,7 +922,7 @@ public Task&lt;IActionResult&gt; Details(int? id)</code></pre>
 
   <h3 id="test_versta_Controllers_OrdersController_Index" data-uid="test_versta.Controllers.OrdersController.Index">
   Index()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Просмотр списка заказов.
@@ -956,7 +958,7 @@ public Task&lt;IActionResult&gt; Index()</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L15" class="edit-link">Edit this page</a>
+          <a href="https://github.com/SBRWevc/test_versta/blob/master/Controllers/OrdersController.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 

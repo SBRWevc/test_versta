@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: test_versta.Hubs
+  commentId: N:test_versta.Hubs
+  id: test_versta.Hubs
+  children:
+  - test_versta.Hubs.OrdersHub
+  langs:
+  - csharp
+  - vb
+  name: test_versta.Hubs
+  nameWithType: test_versta.Hubs
+  fullName: test_versta.Hubs
+  type: Namespace
+  assemblies:
+  - test_versta
+references:
+- uid: test_versta.Hubs.OrdersHub
+  commentId: T:test_versta.Hubs.OrdersHub
+  href: test_versta.Hubs.OrdersHub.html
+  name: OrdersHub
+  nameWithType: OrdersHub
+  fullName: test_versta.Hubs.OrdersHub

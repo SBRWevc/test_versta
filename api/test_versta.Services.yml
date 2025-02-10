@@ -4,6 +4,7 @@ items:
   commentId: N:test_versta.Services
   id: test_versta.Services
   children:
+  - test_versta.Services.FutureOrTodayAttribute
   - test_versta.Services.InitialData
   langs:
   - csharp
@@ -15,6 +16,12 @@ items:
   assemblies:
   - test_versta
 references:
+- uid: test_versta.Services.FutureOrTodayAttribute
+  commentId: T:test_versta.Services.FutureOrTodayAttribute
+  href: test_versta.Services.FutureOrTodayAttribute.html
+  name: FutureOrTodayAttribute
+  nameWithType: FutureOrTodayAttribute
+  fullName: test_versta.Services.FutureOrTodayAttribute
 - uid: test_versta.Services.InitialData
   commentId: T:test_versta.Services.InitialData
   href: test_versta.Services.InitialData.html

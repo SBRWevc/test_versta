@@ -7,6 +7,5 @@ namespace test_versta.Hubs
     /// </summary>
     public class OrdersHub : Hub
     {
-        // При необходимости можно добавить методы для обработки событий подключения/отключения
     }
 }

@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class InitialData </title>
+      <title>Class OrdersHub </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class InitialData ">
+      <meta name="title" content="Class OrdersHub ">
       
-      <meta name="description" content="Класс для начальной инициализации данных в системе. Создает роли и администратора, если они отсутствуют.">
+      <meta name="description" content="SignalR-хаб для передачи уведомлений о новых заказах.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/SBRWevc/test_versta/new/master/apiSpec/new?filename=test_versta_Services_InitialData.md&amp;value=---%0Auid%3A%20test_versta.Services.InitialData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/SBRWevc/test_versta/new/master/apiSpec/new?filename=test_versta_Hubs_OrdersHub.md&amp;value=---%0Auid%3A%20test_versta.Hubs.OrdersHub%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,26 +84,25 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="test_versta.Services.InitialData">
+        <article data-uid="test_versta.Hubs.OrdersHub">
 
 
 
-  <h1 id="test_versta_Services_InitialData" data-uid="test_versta.Services.InitialData" class="text-break">
-Class InitialData  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Services/InitialData.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <h1 id="test_versta_Hubs_OrdersHub" data-uid="test_versta.Hubs.OrdersHub" class="text-break">
+Class OrdersHub  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Hubs/OrdersHub.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="test_versta.html">test_versta</a>.<a class="xref" href="test_versta.Services.html">Services</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="test_versta.html">test_versta</a>.<a class="xref" href="test_versta.Hubs.html">Hubs</a></dd></dl>
   <dl><dt>Assembly</dt><dd>test_versta.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Класс для начальной инициализации данных в системе.
-Создает роли и администратора, если они отсутствуют.</p>
+  <div class="markdown summary"><p>SignalR-хаб для передачи уведомлений о новых заказах.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class InitialData</code></pre>
+    <pre><code class="lang-csharp hljs">public class OrdersHub : Hub, IDisposable</code></pre>
   </div>
 
 
@@ -113,15 +112,43 @@ Class InitialData  <a class="header-action link-secondary" title="View source" h
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">InitialData</span></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.hub">Hub</a></div>
+      <div><span class="xref">OrdersHub</span></div>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.hub.onconnectedasync">Hub.OnConnectedAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.hub.ondisconnectedasync">Hub.OnDisconnectedAsync(Exception)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.hub.dispose#microsoft-aspnetcore-signalr-hub-dispose(system-boolean)">Hub.Dispose(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.hub.dispose#microsoft-aspnetcore-signalr-hub-dispose">Hub.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.hub.clients">Hub.Clients</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.hub.context">Hub.Context</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.hub.groups">Hub.Groups</a>
+    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -150,57 +177,11 @@ Class InitialData  <a class="header-action link-secondary" title="View source" h
 
 
 
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
-  <a id="test_versta_Services_InitialData_SeedRolesAndAdminAsync_" data-uid="test_versta.Services.InitialData.SeedRolesAndAdminAsync*"></a>
-
-  <h3 id="test_versta_Services_InitialData_SeedRolesAndAdminAsync_Microsoft_AspNetCore_Identity_UserManager_test_versta_Models_ApplicationUser__Microsoft_AspNetCore_Identity_RoleManager_Microsoft_AspNetCore_Identity_IdentityRole__" data-uid="test_versta.Services.InitialData.SeedRolesAndAdminAsync(Microsoft.AspNetCore.Identity.UserManager{test_versta.Models.ApplicationUser},Microsoft.AspNetCore.Identity.RoleManager{Microsoft.AspNetCore.Identity.IdentityRole})">
-  SeedRolesAndAdminAsync(UserManager&lt;ApplicationUser&gt;, RoleManager&lt;IdentityRole&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SBRWevc/test_versta/blob/master/Services/InitialData.cs/#L18"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Инициализирует роли и администратора в системе.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task SeedRolesAndAdminAsync(UserManager&lt;ApplicationUser&gt; userManager, RoleManager&lt;IdentityRole&gt; roleManager)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>userManager</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1">UserManager</a>&lt;<a class="xref" href="test_versta.Models.ApplicationUser.html">ApplicationUser</a>&gt;</dt>
-    <dd><p>Менеджер пользователей.</p>
-</dd>
-    <dt><code>roleManager</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.rolemanager-1">RoleManager</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole">IdentityRole</a>&gt;</dt>
-    <dd><p>Менеджер ролей.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd><p>Асинхронная задача.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/SBRWevc/test_versta/blob/master/Services/InitialData.cs/#L10" class="edit-link">Edit this page</a>
+          <a href="https://github.com/SBRWevc/test_versta/blob/master/Hubs/OrdersHub.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

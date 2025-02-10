@@ -5,7 +5,7 @@ items:
   id: OrdersController
   parent: test_versta.Controllers
   children:
-  - test_versta.Controllers.OrdersController.#ctor(test_versta.Data.ApplicationDbContext)
+  - test_versta.Controllers.OrdersController.#ctor(test_versta.Data.ApplicationDbContext,Microsoft.AspNetCore.SignalR.IHubContext{test_versta.Hubs.OrdersHub})
   - test_versta.Controllers.OrdersController.Create
   - test_versta.Controllers.OrdersController.Create(test_versta.Models.Order)
   - test_versta.Controllers.OrdersController.Details(System.Nullable{System.Int32})
@@ -24,7 +24,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: OrdersController
     path: Controllers/OrdersController.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - test_versta
   namespace: test_versta.Controllers
@@ -252,16 +252,16 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: test_versta.Controllers.OrdersController.#ctor(test_versta.Data.ApplicationDbContext)
-  commentId: M:test_versta.Controllers.OrdersController.#ctor(test_versta.Data.ApplicationDbContext)
-  id: '#ctor(test_versta.Data.ApplicationDbContext)'
+- uid: test_versta.Controllers.OrdersController.#ctor(test_versta.Data.ApplicationDbContext,Microsoft.AspNetCore.SignalR.IHubContext{test_versta.Hubs.OrdersHub})
+  commentId: M:test_versta.Controllers.OrdersController.#ctor(test_versta.Data.ApplicationDbContext,Microsoft.AspNetCore.SignalR.IHubContext{test_versta.Hubs.OrdersHub})
+  id: '#ctor(test_versta.Data.ApplicationDbContext,Microsoft.AspNetCore.SignalR.IHubContext{test_versta.Hubs.OrdersHub})'
   parent: test_versta.Controllers.OrdersController
   langs:
   - csharp
   - vb
-  name: OrdersController(ApplicationDbContext)
-  nameWithType: OrdersController.OrdersController(ApplicationDbContext)
-  fullName: test_versta.Controllers.OrdersController.OrdersController(test_versta.Data.ApplicationDbContext)
+  name: OrdersController(ApplicationDbContext, IHubContext<OrdersHub>)
+  nameWithType: OrdersController.OrdersController(ApplicationDbContext, IHubContext<OrdersHub>)
+  fullName: test_versta.Controllers.OrdersController.OrdersController(test_versta.Data.ApplicationDbContext, Microsoft.AspNetCore.SignalR.IHubContext<test_versta.Hubs.OrdersHub>)
   type: Constructor
   source:
     remote:
@@ -270,7 +270,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: .ctor
     path: Controllers/OrdersController.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - test_versta
   namespace: test_versta.Controllers
@@ -282,15 +282,17 @@ items:
     Также поддерживает создание заказов без авторизации.
   example: []
   syntax:
-    content: public OrdersController(ApplicationDbContext context)
+    content: public OrdersController(ApplicationDbContext context, IHubContext<OrdersHub> ordersHub)
     parameters:
     - id: context
       type: test_versta.Data.ApplicationDbContext
-    content.vb: Public Sub New(context As ApplicationDbContext)
+    - id: ordersHub
+      type: Microsoft.AspNetCore.SignalR.IHubContext{test_versta.Hubs.OrdersHub}
+    content.vb: Public Sub New(context As ApplicationDbContext, ordersHub As IHubContext(Of OrdersHub))
   overload: test_versta.Controllers.OrdersController.#ctor*
-  nameWithType.vb: OrdersController.New(ApplicationDbContext)
-  fullName.vb: test_versta.Controllers.OrdersController.New(test_versta.Data.ApplicationDbContext)
-  name.vb: New(ApplicationDbContext)
+  nameWithType.vb: OrdersController.New(ApplicationDbContext, IHubContext(Of OrdersHub))
+  fullName.vb: test_versta.Controllers.OrdersController.New(test_versta.Data.ApplicationDbContext, Microsoft.AspNetCore.SignalR.IHubContext(Of test_versta.Hubs.OrdersHub))
+  name.vb: New(ApplicationDbContext, IHubContext(Of OrdersHub))
 - uid: test_versta.Controllers.OrdersController.Index
   commentId: M:test_versta.Controllers.OrdersController.Index
   id: Index
@@ -309,7 +311,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: Index
     path: Controllers/OrdersController.cs
-    startLine: 22
+    startLine: 24
   assemblies:
   - test_versta
   namespace: test_versta.Controllers
@@ -355,7 +357,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: Details
     path: Controllers/OrdersController.cs
-    startLine: 44
+    startLine: 46
   assemblies:
   - test_versta
   namespace: test_versta.Controllers
@@ -408,7 +410,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: Create
     path: Controllers/OrdersController.cs
-    startLine: 73
+    startLine: 75
   assemblies:
   - test_versta
   namespace: test_versta.Controllers
@@ -452,7 +454,7 @@ items:
       repo: https://github.com/SBRWevc/test_versta.git
     id: Create
     path: Controllers/OrdersController.cs
-    startLine: 86
+    startLine: 88
   assemblies:
   - test_versta
   namespace: test_versta.Controllers
@@ -10507,7 +10509,7 @@ references:
   - name: )
 - uid: test_versta.Controllers.OrdersController.#ctor*
   commentId: Overload:test_versta.Controllers.OrdersController.#ctor
-  href: test_versta.Controllers.OrdersController.html#test_versta_Controllers_OrdersController__ctor_test_versta_Data_ApplicationDbContext_
+  href: test_versta.Controllers.OrdersController.html#test_versta_Controllers_OrdersController__ctor_test_versta_Data_ApplicationDbContext_Microsoft_AspNetCore_SignalR_IHubContext_test_versta_Hubs_OrdersHub__
   name: OrdersController
   nameWithType: OrdersController.OrdersController
   fullName: test_versta.Controllers.OrdersController.OrdersController
@@ -10521,6 +10523,39 @@ references:
   name: ApplicationDbContext
   nameWithType: ApplicationDbContext
   fullName: test_versta.Data.ApplicationDbContext
+- uid: Microsoft.AspNetCore.SignalR.IHubContext{test_versta.Hubs.OrdersHub}
+  commentId: T:Microsoft.AspNetCore.SignalR.IHubContext{test_versta.Hubs.OrdersHub}
+  parent: Microsoft.AspNetCore.SignalR
+  definition: Microsoft.AspNetCore.SignalR.IHubContext`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.ihubcontext-1
+  name: IHubContext<OrdersHub>
+  nameWithType: IHubContext<OrdersHub>
+  fullName: Microsoft.AspNetCore.SignalR.IHubContext<test_versta.Hubs.OrdersHub>
+  nameWithType.vb: IHubContext(Of OrdersHub)
+  fullName.vb: Microsoft.AspNetCore.SignalR.IHubContext(Of test_versta.Hubs.OrdersHub)
+  name.vb: IHubContext(Of OrdersHub)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.SignalR.IHubContext`1
+    name: IHubContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.ihubcontext-1
+  - name: <
+  - uid: test_versta.Hubs.OrdersHub
+    name: OrdersHub
+    href: test_versta.Hubs.OrdersHub.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.SignalR.IHubContext`1
+    name: IHubContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.ihubcontext-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: test_versta.Hubs.OrdersHub
+    name: OrdersHub
+    href: test_versta.Hubs.OrdersHub.html
+  - name: )
 - uid: test_versta.Data
   commentId: N:test_versta.Data
   href: test_versta.html
@@ -10543,6 +10578,71 @@ references:
   - uid: test_versta.Data
     name: Data
     href: test_versta.Data.html
+- uid: Microsoft.AspNetCore.SignalR.IHubContext`1
+  commentId: T:Microsoft.AspNetCore.SignalR.IHubContext`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.ihubcontext-1
+  name: IHubContext<THub>
+  nameWithType: IHubContext<THub>
+  fullName: Microsoft.AspNetCore.SignalR.IHubContext<THub>
+  nameWithType.vb: IHubContext(Of THub)
+  fullName.vb: Microsoft.AspNetCore.SignalR.IHubContext(Of THub)
+  name.vb: IHubContext(Of THub)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.SignalR.IHubContext`1
+    name: IHubContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.ihubcontext-1
+  - name: <
+  - name: THub
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.SignalR.IHubContext`1
+    name: IHubContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.ihubcontext-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: THub
+  - name: )
+- uid: Microsoft.AspNetCore.SignalR
+  commentId: N:Microsoft.AspNetCore.SignalR
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.SignalR
+  nameWithType: Microsoft.AspNetCore.SignalR
+  fullName: Microsoft.AspNetCore.SignalR
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.SignalR
+    name: SignalR
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.SignalR
+    name: SignalR
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr
 - uid: test_versta.Controllers.OrdersController.Index*
   commentId: Overload:test_versta.Controllers.OrdersController.Index
   href: test_versta.Controllers.OrdersController.html#test_versta_Controllers_OrdersController_Index
