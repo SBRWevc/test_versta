@@ -14,12 +14,10 @@
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="Email" placeholder="name@example.com" asp-for="Email">
                     <label for="Email">Адрес электронной почты</label>
-                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="password" class="form-control" id="Password" placeholder="Пароль" asp-for="Password">
                     <label for="Password">Пароль</label>
-                    <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="form-check">
@@ -37,6 +35,19 @@
     </div>
 </div>
 
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+    {
+        <div id="liveToast" class="toast text-bg-danger border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex user-select-none">
+                <div class="toast-body">
+                    @error.ErrorMessage
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+            </div>
+        </div>
+    }
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
