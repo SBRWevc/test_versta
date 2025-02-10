@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using test_versta.Services;
 
 namespace test_versta.Models
 {
@@ -47,6 +48,7 @@ namespace test_versta.Models
         /// </summary>
         [Required(ErrorMessage = "Укажите вес груза")]
         [Display(Name = "Вес груза")]
+        [Range(0.1, 1000, ErrorMessage = "Вес груза должен быть в пределах от 0.1 до 1000 кг")]
         public decimal Weight { get; set; }
 
         /// <summary>
@@ -55,6 +57,7 @@ namespace test_versta.Models
         [Required(ErrorMessage = "Укажите дату забора груза")]
         [Display(Name = "Дата забора груза")]
         [DataType(DataType.Date)]
+        [FutureOrToday(ErrorMessage = "Дата забора груза должна быть сегодняшней или в будущем")]
         public DateTime PickupDate { get; set; }
 
         /// <summary>
