@@ -20,12 +20,24 @@
                     <label for="Email">Адрес электронной почты</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="Password" placeholder="Пароль" asp-for="Password">
-                    <label for="Password">Пароль</label>
+                    <input class="form-control" type="password"
+                           placeholder="Пароль" asp-for="Password" id="passwordInput">
+                    <label for="passwordInput">Пароль</label>
+                    <button type="button"
+                            class="btn btn-sm btn-outline-secondary border-0 position-absolute end-0 top-50 translate-middle-y me-2"
+                            onclick="togglePasswordVisibility()">
+                        <i id="passwordIcon" class="bi bi-eye" style="font-size: 1.15rem !important;"></i>
+                    </button>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="ConfirmPassword" placeholder="Подтверждение пароля" asp-for="ConfirmPassword">
-                    <label for="ConfirmPassword">Подтверждение пароля</label>
+                    <input class="form-control" type="password"
+                           placeholder="Подтвердите пароль" asp-for="ConfirmPassword" id="confirmPasswordInput">
+                    <label for="confirmPasswordInput">Подтвердите пароль</label>
+                    <button type="button"
+                            class="btn btn-sm btn-outline-secondary border-0 position-absolute end-0 top-50 translate-middle-y me-2"
+                            onclick="toggleConfirmPasswordVisibility()">
+                        <i id="confirmPasswordIcon" class="bi bi-eye" style="font-size: 1.15rem !important;"></i>
+                    </button>
                 </div>
                 <input type="hidden" asp-for="ReturnUrl"/>
                 <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
