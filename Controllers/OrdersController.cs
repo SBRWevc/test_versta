@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using Microsoft.AspNetCore.SignalR;
 using test_versta.Data;
+using test_versta.Hubs;
 using test_versta.Models;
 
 namespace test_versta.Controllers
@@ -12,7 +14,7 @@ namespace test_versta.Controllers
     /// Позволяет клиентам просматривать свои заказы, а администраторам — все заказы.
     /// Также поддерживает создание заказов без авторизации.
     /// </summary>
-    public class OrdersController(ApplicationDbContext context) : Controller
+    public class OrdersController(ApplicationDbContext context, IHubContext<OrdersHub> ordersHub) : Controller
     {
         /// <summary>
         /// Просмотр списка заказов.
@@ -99,6 +101,9 @@ namespace test_versta.Controllers
 
             context.Add(order);
             await context.SaveChangesAsync();
+            
+            await ordersHub.Clients.All.SendAsync("ReceiveNewOrder", order);
+            
             return RedirectToAction(nameof(Create));
         }
     }

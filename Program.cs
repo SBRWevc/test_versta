@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using test_versta.Data;
+using test_versta.Hubs;
 using test_versta.Models;
 using test_versta.Services;
 
@@ -14,6 +15,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -30,6 +33,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapHub<OrdersHub>("/ordersHub");
 
 app.MapControllerRoute(
     name: "default",
