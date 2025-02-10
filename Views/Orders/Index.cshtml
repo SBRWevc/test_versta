@@ -35,19 +35,14 @@
     </div>
 </div>
 
-<!-- Подключаем SignalR клиентскую библиотеку -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.0/signalr.min.js"></script>
 <script type="text/javascript">
-    // Создаем подключение к SignalR хабу
     const connection = new signalR.HubConnectionBuilder()
         .withUrl("/ordersHub")
         .build();
 
-    // Обработка события "ReceiveNewOrder" от сервера
     connection.on("ReceiveNewOrder", function(order) {
-        // Преобразуем дату в формат строки
         const pickupDate = new Date(order.pickupDate).toLocaleDateString();
-        // Формируем HTML-код для нового заказа
         const orderHtml = `
             <div class="col-12 col-md-6 col-lg-4 mb-4" id="order-${order.orderId}">
                 <div class="card animate__animated animate__fadeInUp">
@@ -66,11 +61,9 @@
                 </div>
             </div>
         `;
-        // Добавляем новый заказ в начало списка
-        document.getElementById("ordersRow").insertAdjacentHTML("afterbegin", orderHtml);
+        document.getElementById("ordersRow").insertAdjacentHTML("beforeend", orderHtml);
     });
 
-    // Запускаем подключение
     connection.start().catch(function (err) {
         return console.error(err.toString());
     });
