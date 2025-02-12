@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/SBRWevc/test_versta/blob/master/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/SBRWevc/test_versta/blob/master/readme.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -39,12 +39,13 @@
 
   </head>
 
-  <body class="tex2jax_ignore" data-layout="landing" data-yaml-mime="">
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="index.html">
             <img id="logo" class="svg" src="logo.svg" alt="test_versta">
+            test_versta
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -125,14 +126,13 @@ cd test_versta
 <p>Если вас устраивает использование с тестовым сервером, прописанным в приложении, то ничего менять не надо.</p>
 <p>Если вы хотите подключиться к своей базе данных:</p>
 <ul>
-<li><p>Откройте файл appsettings.json и обновите строку подключения DefaultConnection с учётом ваших настроек PostgreSQL:</p>
+<li>Откройте файл appsettings.json и обновите строку подключения DefaultConnection с учётом ваших настроек PostgreSQL:</li>
+</ul>
 <pre><code class="lang-c#">&quot;ConnectionStrings&quot;: {
    &quot;DefaultConnection&quot;: &quot;Host=localhost;Port=5432;Database=TestVerstaDb;Username=yourusername;Password=yourpassword&quot;
 }
 
 </code></pre>
-</li>
-</ul>
 </li>
 <li><p><strong>Примените миграции базы данных (если изменена строка подключения):</strong></p>
 <p>Откройте терминал в корневой папке проекта и выполните команды:</p>
@@ -184,7 +184,7 @@ dotnet ef database update
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/SBRWevc/test_versta/blob/master/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/SBRWevc/test_versta/blob/master/readme.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

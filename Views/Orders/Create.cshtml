@@ -15,32 +15,26 @@
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="SenderCity" placeholder="Город отправителя" asp-for="SenderCity">
                         <label for="SenderCity">Город отправителя</label>
-                        <span asp-validation-for="SenderCity" class="text-danger"></span>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="SenderAddress" placeholder="Адрес отправителя" asp-for="SenderAddress">
                         <label for="SenderAddress">Адрес отправителя</label>
-                        <span asp-validation-for="SenderAddress" class="text-danger"></span>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="RecipientCity" placeholder="Город получателя" asp-for="RecipientCity">
                         <label for="RecipientCity">Город получателя</label>
-                        <span asp-validation-for="RecipientCity" class="text-danger"></span>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="RecipientAddress" placeholder="Адрес получателя" asp-for="RecipientAddress">
                         <label for="RecipientAddress">Адрес получателя</label>
-                        <span asp-validation-for="RecipientAddress" class="text-danger"></span>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="Weight" placeholder="Вес груза" asp-for="Weight">
                         <label for="Weight">Вес груза</label>
-                        <span asp-validation-for="Weight" class="text-danger"></span>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="date" class="form-control" id="PickupDate" placeholder="Вес груза" asp-for="PickupDate">
                         <label for="PickupDate">Дата забора груза</label>
-                        <span asp-validation-for="PickupDate" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Создать заказ</button>
                 </form>
@@ -49,6 +43,19 @@
     </div>
 </div>
 
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+    {
+        <div id="liveToast" class="toast text-bg-danger border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex user-select-none">
+                <div class="toast-body">
+                    @error.ErrorMessage
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+            </div>
+        </div>
+    }
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

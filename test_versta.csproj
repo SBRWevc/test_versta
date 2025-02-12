@@ -29,6 +29,13 @@
       <_ContentIncludedByDefault Remove="Views\Orders\MyOrders.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Orders\OrderCreated.cshtml" />
       <_ContentIncludedByDefault Remove="wwwroot\js\site.js" />
+      <_ContentIncludedByDefault Remove="_site\api\toc.json" />
+      <_ContentIncludedByDefault Remove="_site\docs\toc.json" />
+      <_ContentIncludedByDefault Remove="_site\index.json" />
+      <_ContentIncludedByDefault Remove="_site\manifest.json" />
+      <_ContentIncludedByDefault Remove="_site\toc.json" />
+      <_ContentIncludedByDefault Remove="_exported_templates\default\search-stopwords.json" />
+      <_ContentIncludedByDefault Remove="_exported_templates\default\token.json" />
     </ItemGroup>
 
     <ItemGroup>
