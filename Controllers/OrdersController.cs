@@ -1,105 +1,57 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
-using test_versta.Data;
-using test_versta.Models;
+using test_versta.Interfaces;
+using test_versta.Services;
+using test_versta.ViewModels;
 
-namespace test_versta.Controllers
+namespace test_versta.Controllers;
+
+public class OrdersController(IOrderService orderService) : Controller
 {
-    /// <summary>
-    /// Контроллер для управления заказами.
-    /// Позволяет клиентам просматривать свои заказы, а администраторам — все заказы.
-    /// Также поддерживает создание заказов без авторизации.
-    /// </summary>
-    public class OrdersController(ApplicationDbContext context) : Controller
+    [HttpGet]
+    public async Task<IActionResult> Index()
     {
-        /// <summary>
-        /// Просмотр списка заказов.
-        /// Доступен только авторизованным пользователям.
-        /// Клиенты могут видеть только свои заказы, администраторы — все.
-        /// </summary>
-        /// <returns>Страница со списком заказов.</returns>
-        [Authorize]
-        public async Task<IActionResult> Index()
-        {
-            IQueryable<Order> ordersQuery = context.Orders;
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var isAdmin = User.IsInRole("Administrator");
 
-            if (!User.IsInRole("Administrator"))
-            {
-                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                ordersQuery = ordersQuery.Where(o => o.ClientId == userId);
-            }
+        var orders = await orderService.GetOrdersAsync(userId, isAdmin);
+        var ordersViewModel = orders.Select(OrderMapper.ToViewModel).ToList();
 
-            var orders = await ordersQuery.ToListAsync();
-            return View(orders);
-        }
+        return View(ordersViewModel);
+    }
 
-        /// <summary>
-        /// Просмотр деталей конкретного заказа.
-        /// Доступен только авторизованным пользователям.
-        /// Клиенты могут просматривать только свои заказы, администраторы — любые.
-        /// </summary>
-        /// <param name="id">Идентификатор заказа.</param>
-        /// <returns>Страница с деталями заказа.</returns>
-        [Authorize]
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-                return NotFound();
+    [HttpGet]
+    public async Task<IActionResult> Details(int? id)
+    {
+        if (id is null) return NotFound();
 
-            var order = await context.Orders
-                .Include(o => o.Client)
-                .FirstOrDefaultAsync(m => m.OrderId == id);
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var isAdmin = User.IsInRole("Administrator");
 
-            if (order == null)
-                return NotFound();
+        var order = await orderService.GetOrderByIdAsync(id.Value, userId, isAdmin);
+        if (order is null) return Forbid();
+        
+        var orderViewModel = OrderMapper.ToViewModel(order);
 
-            if (User.IsInRole("Administrator")) return View(order);
+        return View(orderViewModel);
+    }
 
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (order.ClientId != userId)
-            {
-                return Forbid();
-            }
+    [AllowAnonymous]
+    [HttpGet]
+    public IActionResult Create() => View();
 
-            return View(order);
-        }
+    [AllowAnonymous]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create(OrderViewModel orderViewModel)
+    {
+        if (!ModelState.IsValid) return View(orderViewModel);
 
-        /// <summary>
-        /// Отображает форму создания нового заказа.
-        /// Доступна всем пользователям, включая неавторизованных.
-        /// </summary>
-        /// <returns>Страница создания заказа.</returns>
-        [AllowAnonymous]
-        public IActionResult Create()
-        {
-            return View();
-        }
+        var userId = User.Identity.IsAuthenticated ? User.FindFirst(ClaimTypes.NameIdentifier)?.Value : null;
 
-        /// <summary>
-        /// Создаёт новый заказ на основе введённых пользователем данных.
-        /// Доступно всем пользователям, включая неавторизованных.
-        /// Если пользователь авторизован, заказ привязывается к его учётной записи.
-        /// </summary>
-        /// <param name="order">Модель заказа, содержащая информацию об отправке.</param>
-        /// <returns>Редирект на страницу создания заказа после успешного оформления.</returns>
-        [AllowAnonymous]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SenderCity,SenderAddress,RecipientCity,RecipientAddress,Weight,PickupDate")] Order order)
-        {
-            if (!ModelState.IsValid) return View(order);
+        await orderService.CreateOrderAsync(orderViewModel, userId);
 
-            if (User.Identity.IsAuthenticated)
-            {
-                order.ClientId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            }
-            order.PickupDate = DateTime.SpecifyKind(order.PickupDate, DateTimeKind.Utc);
-
-            context.Add(order);
-            await context.SaveChangesAsync();
-            return RedirectToAction(nameof(Create));
-        }
+        return RedirectToAction(nameof(Create));
     }
 }
